@@ -20,7 +20,7 @@ function App() {
           <li>Add product name, price, quantity in inventory data</li>
           <li>React-Bootstrap use case</li>
         </ul> */} 
-        {/* riya */}
+      
       </header>
     </div>
   );
