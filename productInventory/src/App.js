@@ -19,7 +19,8 @@ function App() {
           <li>React components: functional vs class</li>
           <li>Add product name, price, quantity in inventory data</li>
           <li>React-Bootstrap use case</li>
-        </ul> */}
+        </ul> */} 
+        {/* riya */}
       </header>
     </div>
   );
