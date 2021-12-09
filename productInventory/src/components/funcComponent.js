@@ -15,7 +15,7 @@ export default function AddProduct() {
         //     product_name: formData.product_name.value,
         //     price: formData.price.value,
         //     qty: formData.qty.value
-        // }
+        // } //riya
         //console.log(formData.current)
         const newProduct = {
             product_name: formData.current.product_name.value,
