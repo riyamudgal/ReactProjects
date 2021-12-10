@@ -15,6 +15,7 @@ export default class AddInventory extends Component{
         //console.log(formData.current)
         const newProduct = {
             product_name: this.formData.current.product_name.value,
+            product_type: this.formData.current.product_type.value,
             price: this.formData.current.price.value,
             qty: Number(this.formData.current.qty.value)
         }
@@ -37,6 +38,8 @@ export default class AddInventory extends Component{
     // decrement qty value by 1
     decreQty = (event) => {
         const indexOfArray = event.target.value;
+        if(this.state.products[indexOfArray].qty==0)alert("Quantity cannot go negative");
+        else
         this.state.products[indexOfArray].qty = this.state.products[indexOfArray].qty - 1;
         this.setState({
             products: this.state.products
@@ -48,18 +51,25 @@ export default class AddInventory extends Component{
             <div>
                 <Form onSubmit={this.add} ref={this.formData}>
                     <Form.Group controlId="formBasicProductName">
-                        <Form.Label>Product Name:</Form.Label>
-                        <Form.Control type="text" placeholder="Enter Product Name" name="product_name" />
+                        <Form.Label>Product Name</Form.Label>
+                        <Form.Control type="text" placeholder="Enter Inventory Name" name="product_name" />
+                    </Form.Group>
+
+                    <Form.Group controlId="ProductType">
+                        <Form.Label>Inventory Type</Form.Label>
+                        <Form.Control type="text" placeholder="Enter Inventory Type" name="product_type" />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPrice">
-                        <Form.Label>Price:</Form.Label>
-                        <Form.Control type="number" placeholder="Price in Euro" name="price" />
+                        <Form.Label>Price</Form.Label>
+                        <Form.Control type="number" placeholder="Price" name="price" />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicQty">
-                        <Form.Label>Quantity:</Form.Label>
-                        <Form.Control type="number" placeholder="How many: qty" name="qty" />
+                        <Form.Label>Quantity
+                            
+                        </Form.Label>
+                        <Form.Control type="number" placeholder="How many quantity ?" name="qty" />
                     </Form.Group>
 
                     <Button variant="primary" type="submit">
@@ -71,6 +81,7 @@ export default class AddInventory extends Component{
                         <tr>
                             <th>Index</th>
                             <th>Product Name:</th>
+                            <th>Product Type:</th>
                             <th>Price</th>
                             <th>Qty</th>
                             <th>Options</th>
@@ -83,6 +94,7 @@ export default class AddInventory extends Component{
                                     <tr key={index}>
                                         <td>{index}</td>
                                         <td>{item.product_name}</td>
+                                        <td>{item.product_type}</td>
                                         <td>{item.price}</td>
                                         <td>{item.qty}</td>
                                         <td>
