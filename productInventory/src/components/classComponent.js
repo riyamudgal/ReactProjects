@@ -51,12 +51,12 @@ export default class AddInventory extends Component{
             <div>
                 <Form onSubmit={this.add} ref={this.formData}>
                     <Form.Group controlId="formBasicProductName">
-                        <Form.Label>Product Name</Form.Label>
+                        <Form.Label>Medicine Name</Form.Label>
                         <Form.Control type="text" placeholder="Enter Inventory Name" name="product_name" />
                     </Form.Group>
 
                     <Form.Group controlId="ProductType">
-                        <Form.Label>Inventory Type</Form.Label>
+                        <Form.Label>Medicine Type</Form.Label>
                         <Form.Control type="text" placeholder="Enter Inventory Type" name="product_type" />
                     </Form.Group>
 
@@ -66,9 +66,7 @@ export default class AddInventory extends Component{
                     </Form.Group>
 
                     <Form.Group controlId="formBasicQty">
-                        <Form.Label>Quantity
-                            
-                        </Form.Label>
+                        <Form.Label>Quantity</Form.Label>
                         <Form.Control type="number" placeholder="How many quantity ?" name="qty" />
                     </Form.Group>
 
@@ -80,10 +78,10 @@ export default class AddInventory extends Component{
                     <thead>
                         <tr>
                             <th>Index</th>
-                            <th>Product Name:</th>
-                            <th>Product Type:</th>
+                            <th>Medicine Name</th>
+                            <th>Medicine Type</th>
                             <th>Price</th>
-                            <th>Qty</th>
+                            <th>Quantity</th>
                             <th>Options</th>
                         </tr>
                     </thead>
